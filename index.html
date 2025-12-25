@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather 2025</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="top-bar">
+    <div class="brand">
+      <span class="brand-icon">🌤️</span>
+      <div class="brand-text">
+        <span class="brand-name">Weather Hub</span>
+        <span class="brand-sub">Real-time Forecasts</span>
+      </div>
+    </div>
+    <button id="themeToggle" class="theme-btn" title="Toggle theme">🌙</button>
+  </header>
+
+  <!-- SEARCH -->
+  <section class="search-section">
+    <div class="search-wrapper">
+      <span class="search-icon">🔍</span>
+      <input id="searchInput" type="text" placeholder="Search city..." />
+      <button id="searchBtn" class="search-btn">Search</button>
+    </div>
+    <button id="locationBtn" class="location-btn" title="Get weather for current location">
+      <span class="location-icon">📍</span>
+      <span class="location-text">Current Location</span>
+    </button>
+  </section>
+
+  <!-- STATES -->
+  <div id="loading" class="loading hidden">⏳ Loading weather data...</div>
+  <div id="error" class="error hidden"></div>
+
+  <!-- DASHBOARD -->
+  <main id="weatherCard" class="dashboard hidden">
+    <div class="dashboard-content">
+
+      <!-- HERO / CURRENT WEATHER -->
+      <section class="glass hero">
+        <div class="hero-content">
+          <div class="hero-left">
+            <div class="location-info">
+              <h2 id="city"></h2>
+              <p class="location-sub" id="desc"></p>
+            </div>
+
+            <div class="hero-temp-section">
+              <img id="icon" class="weather-icon" />
+              <span id="temp" class="temp-value"></span>
+              <span class="temp-unit">°C</span>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="stat-card">
+              <span class="stat-icon">💧</span>
+              <span class="stat-label">Humidity</span>
+              <b id="humidity" class="stat-value"></b>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon">💨</span>
+              <span class="stat-label">Wind</span>
+              <b id="wind" class="stat-value"></b>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORECAST -->
+      <section class="glass forecast-section">
+        <div class="forecast-header">
+          <h3>📅 5-Day Forecast</h3>
+        </div>
+        <div id="forecast" class="forecast-grid"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>🌐 Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeather</a></p>
+    <p class="footer-credit">© 2025 Weather Hub</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
